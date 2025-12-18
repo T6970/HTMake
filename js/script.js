@@ -1,18 +1,11 @@
-import { tagList } from "./html-tags.js";
-import { setCard } from "./set-card.js";
-const toolbar = document.getElementById("toolbar");
+import { newCard } from "./set-card.js";
 
-toolbar.style.overflow = "auto"
-toolbar.style.display  = "flex"
-toolbar.style.flexDirection = "column"
-setCard(toolbar, 20, 20, 20, 20)
-
-tagList.tags.forEach((tag) => {
-  const eachButton = document.createElement("button");
-  eachButton.name = tag;
-  eachButton.addEventListener("click", () => {});
-  eachButton.className = "card";
-  eachButton.innerText = tag;
-
-  toolbar.appendChild(eachButton);
+const pframe = document.getElementById("preview")
+pframe.addEventListener("load", () => {
+  pframe.srcdoc = '<!DOCTYPE html><html><head></head><body>Write here</body></html>'
+  const preview = pframe.contentDocument || pframe.contentWindow.document
+  preview.designMode = "on"
 })
+
+
+const test = newCard(100, 100, 200, 300)

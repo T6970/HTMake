@@ -1,14 +1,20 @@
 /**
- * Sets size of DOM element.
- * @param {*} el A DOM element.
- * @param {*} top Amount of pixels between top of element and screen edge
- * @param {*} bottom Amount of pixels between bottom of element and screen edge
- * @param {*} left Amount of pixels between left of element and screen edge
- * @param {*} right Amount of pixels between right of element and screen edge
+ * Creates a card and appends it to preview.
+ * @param {number} x X position of the card
+ * @param {number} y Y position of the card
+ * @param {number} width Width of the card
+ * @param {number} height Height of the card
+ * @returns {HTMLDivElement} The created card element
  */
-export const setCard = (el, top, bottom, left, right) => {
-  el.style.top    = `${top}px`   ;
-  el.style.bottom = `${bottom}px`;
-  el.style.left   = `${left}px`  ;
-  el.style.right  = `${right}px` ;
+
+export const newCard = (x, y, width, height) => {
+  const card = document.createElement("div")
+  card.className = "card"
+  card.style.position = "absolute"
+  card.style.left = `${x}px`
+  card.style.top = `${y}px`
+  card.style.width = `${width}px`
+  card.style.height = `${height}px`
+  preview.body.appendChild(card)
+  return card
 }
