@@ -12,4 +12,5 @@ pframe.addEventListener("load", () => {
 
   const test = newCard(100, 100, 200, 300, preview)
   console.log(test)
+  console.log(newCard)
 })
