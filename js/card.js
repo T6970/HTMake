@@ -7,7 +7,7 @@
  * @returns {HTMLDivElement} The created card element
  */
 
-export const newCard = (x, y, width, height, iframe) => {
+export const newCard = (x, y, width, height, frame) => {
   const card = document.createElement("div")
   card.className = "card"
   card.style.position = "absolute"
@@ -15,6 +15,6 @@ export const newCard = (x, y, width, height, iframe) => {
   card.style.top = `${y}px`
   card.style.width = `${width}px`
   card.style.height = `${height}px`
-  iframe.body.appendChild(card)
+  frame.body.appendChild(card)
   return card
 }
